@@ -1,0 +1,20 @@
+from numpy import append
+import random
+n = 5
+min = 0
+max = 100
+
+def nestVectors(depth, vectorspace):
+    
+    if depth == n:
+        return [random.randint(min, max) for i in range(n)]
+    
+    space = []
+
+    while (len(space) < n) :
+        space.append(nestVectors(depth + 1, space))
+    
+
+    return space;
+
+  
